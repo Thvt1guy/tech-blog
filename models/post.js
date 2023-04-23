@@ -10,10 +10,11 @@ Post.init({
         primaryKey: true,
         autoIncrement: true,
       },
-    username:{
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
+      //I dont think I need this ↓
+    // username:{
+    //     type: DataTypes.STRING,
+    //     allowNull: false,
+    //   },
     post: {
         type: DataTypes.STRING,
         allowNull: false,
