@@ -15,6 +15,10 @@ Post.init({
     //     type: DataTypes.STRING,
     //     allowNull: false,
     //   },
+    postTitle:{
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     postText: {
         type: DataTypes.STRING,
         allowNull: false,
