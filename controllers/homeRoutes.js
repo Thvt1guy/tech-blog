@@ -1,5 +1,5 @@
 const router = require('express').Router();
-// const { response } = require('express');
+const { response } = require('express');
 const {Post, User, Comment} = require('../models/');
 
 
@@ -17,6 +17,17 @@ router.get('/', async (req, res) => {
     } catch(err) {
         res.status(500).json(err);
     }
+});
+
+router.get('/login', (req, res) => {
+    if (req.session.logged_in) {
+      res.redirect('/');
+      return;
+    }
+  
+    res.render('login', {logged_in: req.session.logged_in});
+    // res.render('login');
+    // res.status(200).json("Login Route Working!")
 });
 
 module.exports = router;

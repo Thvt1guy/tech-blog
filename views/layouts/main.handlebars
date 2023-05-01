@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@1.*/css/pico.min.css">
     <title>Document</title>
     <script src="/js/script.js" defer></script>
 </head>
@@ -11,9 +12,13 @@
     <nav>
         <ul>
             <li onclick="location.href='/'">Home</li>
-            <li>Dasboard</li>
-            <li>Login</li>
+            <li onclick="location.href='/'">Dasboard</li>
+            {{#if logged_in}}
             <li>Logout</li>
+            {{else}}
+            <li onclick="location.href='/login'">Login</li>
+            <li onclick="location.href='/signup'">Sign up</li>
+            {{/if}}
         </ul>
     </nav>
     {{{body}}}
