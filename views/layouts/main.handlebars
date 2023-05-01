@@ -14,7 +14,7 @@
             <li onclick="location.href='/'">Home</li>
             <li onclick="location.href='/'">Dasboard</li>
             {{#if logged_in}}
-            <li>Logout</li>
+            <li id="logout">Logout</li>
             {{else}}
             <li onclick="location.href='/login'">Login</li>
             <li onclick="location.href='/signup'">Sign up</li>
@@ -24,3 +24,4 @@
     {{{body}}}
 </body>
 </html>
+<script src="/js/logout.js"></script>
