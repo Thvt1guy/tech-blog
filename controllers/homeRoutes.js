@@ -12,7 +12,7 @@ router.get('/', async (req, res) => {
 
         const post = postData.map((post)=> post.get({ plain: true }));
 
-        res.render('homepage', { post });
+        res.render('homepage', { post, logged_in: req.session.logged_in });
         // res.render('homepage', { post, user_id: req.session.user_id, logged_in: req.session.logged_in});
     } catch(err) {
         res.status(500).json(err);
@@ -45,12 +45,15 @@ router.get('/post/:id', async (req, res) => {
         // res.status(200).json("Homepage Route Working!")
         const postData = await Post.findByPk(req.params.id);
 
+        // console.log(postData);
+
         if(!postData){
             alert("NO POST FOUND!");
             res.status(404).end();
             res.redirect('/');
         } else {
-            res.render('singlepost', { postData });
+            const post = postData.get({ plain: true })
+            res.render('singlepost', { post });
         }
         // res.render('homepage', { post, user_id: req.session.user_id, logged_in: req.session.logged_in});
     } catch(err) {

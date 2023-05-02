@@ -1,7 +1,7 @@
 {{!-- <p>homepage</p> --}}
 
 {{#each post}}
-<div>
+<div onclick="location.href='/post/{{this.id}}'">
 <p>{{this.postTitle}}</p>
 <p>by, {{user.username}}</p>
 </div>
